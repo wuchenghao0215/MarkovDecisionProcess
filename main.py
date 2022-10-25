@@ -21,7 +21,7 @@ def compute_return(start_index, chain, gamma):
     G = 0
     for i in reversed(range(start_index, len(chain))):
         # TODO ~1: 实现回报函数
-        # G =
+        G = gamma * G + rewards[chain[i] - 1]
     return G
 
 
@@ -168,9 +168,9 @@ def MC(episodes, V, N, gamma):
         for i in range(len(episode) - 1, -1, -1):  # 一个序列从后往前计算
             (s, a, r, s_next) = episode[i]
             # TODO ~3: 代码填空
-            # G =
-            # N[s] =
-            # V[s] =
+            G = G * gamma + r
+            N[s] += 1
+            V[s] += (G - V[s]) / N[s]
 
 
 timestep_max = 20
