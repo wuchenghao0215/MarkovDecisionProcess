@@ -12,7 +12,13 @@ def compute_return(start_index, chain, gamma):
     return G
 ```
 
+参考多项式的计算，比较简单
+
 ## TODO 2
+
+状态转移概率矩阵P表示从所有的状态s到所有的后续状态s′的转移概率
+
+好像没什么要写的？就是改一改参数，运行一下试一试
 
 ## TODO 3
 
@@ -28,3 +34,5 @@ def MC(episodes, V, N, gamma):
             N[s] += 1
             V[s] += (G - V[s]) / N[s]
 ```
+
+G的计算参考TODO 1，N[s]和V[s]参考slides中的公式即可
